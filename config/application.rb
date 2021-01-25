@@ -21,6 +21,11 @@ module HelloWorldRails
       g.stylesheets false
       g.helper false
       g.test_framework false
+      g.template_engine false
+      g.test_framework :rspec
     end
+
+    config.api_only = true
+    config.middleware.use ActionDispatch::Flash
   end
 end
