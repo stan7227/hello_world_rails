@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context "account を指定しているとき" do
-    it "ユーザーが作られる" do
+    fit "ユーザーが作られる" do
+      binding.pry
       user = build(:user)
       # user = User.new(name: "foo", account: "foo", email: "foo@example.com")
       # expect(user.valid?).to eq true
@@ -27,7 +28,7 @@ RSpec.describe User, type: :model do
   context "すでに同じ名前の account が存在しているとき" do
     before { create(:user, account: "foo") }
     it "ユーザー作成に失敗する" do
-      
+
       # User.create!(name: "foo", account: "foo", email: "foo@example.com")
       user = build(:user, account: "foo")
       # user = User.new(name: "bar", account: "foo", email: "bar@example.com")
